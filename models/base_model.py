@@ -1,6 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import uuid
 from datetime import datetime
+import models
 """
 BaseModel that defines all common
 attributes/methods for other classes
@@ -26,6 +27,7 @@ class BaseModel():
         else:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """ Return string representation of the class """
@@ -38,6 +40,7 @@ class BaseModel():
         updated_at with the current datetime
         """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """
@@ -45,6 +48,6 @@ class BaseModel():
         keys/values of __dict__ of the instance
         """
         self.__dict__['__class__'] = self.__class__.__name__
-        self.created_at = self.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
+        self.created_at = self.created_at.isoformat()
         self.updated_at = self.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
         return self.__dict__
