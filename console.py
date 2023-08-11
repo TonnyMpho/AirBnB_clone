@@ -97,20 +97,27 @@ class HBNBCommand(cmd.Cmd):
         instances = storage.all()
         key = "{}.{}".format(args[0], args[1])
 
+        print(args)
+
         if key not in instances.keys():
             print("** no instance found **")
             return
 
         if len(args) < 3:
             print("** attribute name missing **")
-        elif len(args) < 4:
+            return
+        if len(args) < 4:
             print("** value missing **")
-        else:
             return
 
         instance = instances[key]
+        print(instance)
+        print(args[2])
+        print(args[3])
+
         setattr(instance, args[2], args[3])
-        instance.save()
+        print(instance)
+        storage.save()
 
     def validate_args(self, args, cls_names):
         """ Check if arguments were passed """
