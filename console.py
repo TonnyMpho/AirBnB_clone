@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ command interpreter """
 from models.base_model import BaseModel
+from models.user import User
 from models import storage
 import cmd
 
@@ -8,7 +9,7 @@ import cmd
 class HBNBCommand(cmd.Cmd):
     """ class definition of the command interpreter """
 
-    __classNames = ["BaseModel"]
+    __classNames = ["BaseModel", "User"]
 
     prompt = '(hbnb) '
 
