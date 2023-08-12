@@ -117,12 +117,8 @@ class HBNBCommand(cmd.Cmd):
             return
 
         instance = instances[key]
-        print(instance)
-        print(args[2])
-        print(args[3])
 
-        setattr(instance, args[2], args[3])
-        print(instance)
+        setattr(instance, args[2], args[3].strip('"')
         storage.save()
 
     def validate_args(self, args, cls_names):

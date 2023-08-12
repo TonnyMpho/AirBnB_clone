@@ -20,6 +20,8 @@ class BaseModel():
         time_format = "%Y-%m-%dT%H:%M:%S.%f"
         if kwargs:
             for key, val in kwargs.items():
+                if key != "__class__":
+                    setattr(self, key, val)
                 if key == "created_at":
                     self.created_at = datetime.strptime(val, time_format)
                 if key == "updated_at":
