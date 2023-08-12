@@ -103,8 +103,6 @@ class HBNBCommand(cmd.Cmd):
         instances = storage.all()
         key = "{}.{}".format(args[0], args[1])
 
-        print(args)
-
         if key not in instances.keys():
             print("** no instance found **")
             return
@@ -118,7 +116,7 @@ class HBNBCommand(cmd.Cmd):
 
         instance = instances[key]
 
-        setattr(instance, args[2], args[3].strip('"')
+        setattr(instance, args[2], args[3].strip('"'))
         storage.save()
 
     def validate_args(self, args, cls_names):
