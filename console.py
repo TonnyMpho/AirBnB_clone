@@ -117,8 +117,11 @@ class HBNBCommand(cmd.Cmd):
 
         instance = instances[key]
 
-        setattr(instance, args[2].strip('"'), args[3].strip('"'))
-        storage.save()
+        try:
+            setattr(instance, args[2], eval(args[3]))
+            storage.save()
+        except Exception:
+            return
 
     def validate_args(self, args, cls_names):
         """ Check if arguments were passed """
