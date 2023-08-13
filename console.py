@@ -75,7 +75,6 @@ class HBNBCommand(cmd.Cmd):
         """
         instances = storage.all()
 
-        if instances:
         if arg:
             objects = []
             if arg not in self.__classNames:
