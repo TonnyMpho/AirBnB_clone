@@ -29,6 +29,6 @@ class TestReview(unittest.TestCase):
         )
         self.assertEqual(str(self.review), expected_str)
 
+
 if __name__ == '__main__':
     unittest.main()
-

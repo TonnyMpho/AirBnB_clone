@@ -4,6 +4,7 @@ import unittest
 from datetime import datetime
 from models.user import User
 
+
 class TestUser(unittest.TestCase):
     """ Unittests """
     def setUp(self):
@@ -29,6 +30,6 @@ class TestUser(unittest.TestCase):
         )
         self.assertEqual(str(self.user), expected_str)
 
+
 if __name__ == '__main__':
     unittest.main()
-
