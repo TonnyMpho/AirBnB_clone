@@ -20,8 +20,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """Creates a new instance, saves it
-        (to the JSON file) and prints the id
-        """
+        (to the JSON file) and prints the id"""
         if arg:
             try:
                 new_instance = eval(arg)()
@@ -34,8 +33,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """Prints the string representation of an instance
-        based on the class name and id
-        """
+        based on the class name and id"""
         arg = arg.split()
 
         if not self.validate_args(arg, self.__classNames):
@@ -53,8 +51,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and id
-        (save the change into the JSON file)
-        """
+        (save the change into the JSON file)"""
         args = arg.split()
 
         if not self.validate_args(args, self.__classNames):
@@ -82,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
                 return
             else:
                 for key, instance in instances.items():
-                    if key.startswith(arg):
+                    if arg == key.split(".")[0]:
                         objects.append(str(instance))
                 print(objects)
 
