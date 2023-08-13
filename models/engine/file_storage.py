@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" serialization-deserialization """
+""" serialization and deserialization of data """
 import os
 import json
 from models.base_model import BaseModel
