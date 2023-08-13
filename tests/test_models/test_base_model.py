@@ -23,9 +23,14 @@ class TestBaseModel(unittest.TestCase):
 
     def test_created_at_is_datetime(self):
         """
-        Check if the class created_at & updated at is a datetime instance
+        Check if the class created_at is a datetime instance
         """
         self.assertIsInstance(self.base_model.created_at, datetime)
+
+    def test_updated_at_is_datetime(self):
+        """
+        ckeck if updated_at is a datetime instance
+        """
         self.assertIsInstance(self.base_model.updated_at, datetime)
 
     def test_str_representation(self):
