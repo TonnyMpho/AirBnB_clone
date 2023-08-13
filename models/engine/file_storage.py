@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ serialization and deserialization of data """
 import json
+import os
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -47,7 +48,7 @@ class FileStorage():
         deserializes the JSON file to __objects
         (only if the JSON file (__file_path)
         """
-        try:
+        if os.path.exists(self.__file_path):
             with open(self.__file_path, 'r') as f:
                 obj = json.load(f)
 
@@ -57,5 +58,3 @@ class FileStorage():
                     cls_instance = cls_name(**val)
 
                     self.__objects[key] = cls_instance
-        except FileNotFoundError:
-            return
