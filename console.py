@@ -14,7 +14,8 @@ import cmd
 class HBNBCommand(cmd.Cmd):
     """ class definition of the command interpreter """
 
-    __classNames = ["BaseModel", "User", "City", "Amenity", "Place", "Review"]
+    __classNames = ["BaseModel",
+                    "User", "State", "City", "Amenity", "Place", "Review"]
 
     prompt = '(hbnb) '
 
