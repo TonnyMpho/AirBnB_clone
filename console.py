@@ -75,10 +75,12 @@ class HBNBCommand(cmd.Cmd):
         """
         instances = storage.all()
 
+        if instances:
         if arg:
             objects = []
             if arg not in self.__classNames:
                 print("* class doesn't exist **")
+                return
             else:
                 for key, instance in instances.items():
                     if key.startswith(arg):
