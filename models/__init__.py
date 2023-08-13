@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-
-import json
+""" Package Initialization """
 from models.engine.file_storage import FileStorage
 
 storage = FileStorage()

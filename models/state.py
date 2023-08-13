@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
 
+
 class State(BaseModel):
 
     """This represents a state.
@@ -8,5 +9,4 @@ class State(BaseModel):
     Attributes:
         name (str): the name of the state.
     """
-
     name = ""
