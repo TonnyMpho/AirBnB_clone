@@ -1,7 +1,5 @@
 ## 0x00. AirBnB clone - The console
 
-![hbnd logo](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png)
-
 ### AirBnB clone project!
 
 It's a clone of the AirBnB webapp
