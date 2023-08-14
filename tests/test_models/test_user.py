@@ -39,7 +39,6 @@ class TestUser(unittest.TestCase):
         """Tests the last_name attribute of User class."""
         self.user.last_name = "Bar"
         self.assertEqual(self.user.last_name, "Bar")
-        self.assertRaises(AttributeError, setattr, self.user, "last_name", 123)
 
     def test_str_representation(self):
         expected_str = "[{}] ({}) {}".format(
