@@ -39,14 +39,14 @@ class TestBaseModel(unittest.TestCase):
         self.assertIn("[BaseModel]", str_representation)
         self.assertIn(str(self.base_model.id), str_representation)
 
-    def test_save_method(self):
+    def test_save(self):
         """ test if it saves """
         original_updated_at = self.base_model.updated_at
         self.base_model.save()
         new_updated_at = self.base_model.updated_at
         self.assertNotEqual(original_updated_at, new_updated_at)
 
-    def test_to_dict_method(self):
+    def test_to_dict(self):
         """ check if it converts everything to dick """
         base_model_dict = self.base_model.to_dict()
         self.assertIsInstance(base_model_dict, dict)

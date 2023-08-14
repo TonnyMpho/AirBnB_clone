@@ -22,6 +22,25 @@ class TestUser(unittest.TestCase):
         self.assertTrue(hasattr(self.user, "first_name"))
         self.assertTrue(hasattr(self.user, "last_name"))
 
+
+    def test_email(self):
+        self.user.email = "airbnb@mail.com"
+        self.assertEqual(self.user.email, "airbnb@mail.com")
+
+    def test_password(self):
+        self.user.password = "root"
+        self.assertEqual(self.user.password, "root")
+
+    def test_first_name(self):
+        self.user.first_name = "John"
+        self.assertEqual(self.user.first_name, "John")
+
+    def test_last_name(self):
+        """Tests the last_name attribute of User class."""
+        self.user.last_name = "Bar"
+        self.assertEqual(self.user.last_name, "Bar")
+        self.assertRaises(AttributeError, setattr, self.user, "last_name", 123)
+
     def test_str_representation(self):
         expected_str = "[{}] ({}) {}".format(
             self.user.__class__.__name__,
