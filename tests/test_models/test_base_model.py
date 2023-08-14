@@ -39,7 +39,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertIn("[BaseModel]", str_representation)
         self.assertIn(str(self.base_model.id), str_representation)
 
-    def test_save(self):
+    def test_save_method(self):
         """ test if it saves """
         original_updated_at = self.base_model.updated_at
         self.base_model.save()
