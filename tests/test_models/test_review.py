@@ -29,6 +29,10 @@ class TestReview(unittest.TestCase):
         )
         self.assertEqual(str(self.review), expected_str)
 
+    def test_args_unused(self):
+        review = Review(None)
+        self.assertNotIn(None, Review.__dict__.values())
+
 
 if __name__ == '__main__':
     unittest.main()
